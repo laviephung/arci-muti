@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================
-# ARCIUM NODES INITIALIZATION SCRIPT
+# ARCIUM NODES INITIALIZATION SCRIPT (FIXED)
 # Init nodes lên blockchain
 # Sử dụng: ./init-nodes.sh <số_node>
 # ============================================
@@ -29,7 +29,22 @@ echo -e "${BLUE}║${GREEN}   ARCIUM NODES INITIALIZATION      ${BLUE}║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════╝${NC}"
 echo -e "${YELLOW}Số node: $NUM_NODES${NC}\n"
 
+# Lấy địa chỉ IP công khai
+echo -e "${CYAN}🔍 Đang lấy địa chỉ IP...${NC}"
 IP_ADDRESS=$(curl -s https://ipecho.net/plain)
+
+# Nếu curl lỗi, thử cách khác
+if [[ -z "$IP_ADDRESS" || ! "$IP_ADDRESS" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    echo -e "${YELLOW}⚠️  Không lấy được IP từ ipecho.net, thử hostname -I...${NC}"
+    IP_ADDRESS=$(hostname -I | awk '{print $1}')
+fi
+
+# Nếu vẫn không hợp lệ, fallback localhost
+if [[ -z "$IP_ADDRESS" || ! "$IP_ADDRESS" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    echo -e "${RED}❌ Không xác định được IP hợp lệ! Sử dụng 127.0.0.1${NC}"
+    IP_ADDRESS="127.0.0.1"
+fi
+
 echo -e "${GREEN}IP:${NC} $IP_ADDRESS\n"
 
 # Kiểm tra balance
