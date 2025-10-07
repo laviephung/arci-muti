@@ -54,8 +54,13 @@ thay số 20 thành số lượng ví muốn tạo
 ```bash
 ./generate-compose.sh 20
 ````
-
-
+```bash
+./init-nodes.sh 20
+````
+buid compose
+```bash
+docker-compose up -d
+````
 
 
 
