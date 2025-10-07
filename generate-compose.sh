@@ -44,6 +44,7 @@ for i in $(seq 1 $NUM_NODES); do
       - OPERATOR_KEYPAIR_FILE=/usr/arx-node/node-keys/operator_keypair.json
       - CALLBACK_AUTHORITY_KEYPAIR_FILE=/usr/arx-node/node-keys/callback_authority_keypair.json
       - NODE_CONFIG_PATH=/usr/arx-node/arx/node_config.toml
+      - RUST_LOG=info
     volumes:
       - ./node-$i/node-config.toml:/usr/arx-node/arx/node_config.toml
       - ./node-$i/node-keypair.json:/usr/arx-node/node-keys/node_keypair.json:ro
@@ -55,6 +56,11 @@ for i in $(seq 1 $NUM_NODES); do
       - "$PORT:8080"
     networks:
       - arcium-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 EOF
 done
