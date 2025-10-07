@@ -61,7 +61,7 @@ buid compose
 ```bash
 docker-compose up -d
 ````
-# Mở menu
+# check logs
 ```bash
 ./view-logs.sh
 ````
