@@ -61,8 +61,24 @@ buid compose
 ```bash
 docker-compose up -d
 ````
+# Mở menu
+```bash
+./view-logs.sh
+````
 
+# Xem logs node 5
+```bash
+./view-logs.sh 5
+````
 
+# Xem logs tất cả (docker)
+```bash
+./view-logs.sh all
+````
+# Check nodes đang active
+```bash
+./view-logs.sh active
+````
 
 
 
