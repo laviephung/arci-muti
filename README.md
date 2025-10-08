@@ -9,6 +9,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y curl build-essential pkg-config libssl-dev libudev-dev git docker.io docker-compose openssl
 sudo systemctl enable docker
 sudo systemctl start docker
+sudo apt install docker-compose -y
+
 ````
 # Cài Rust
 ```bash
