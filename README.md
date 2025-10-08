@@ -86,6 +86,7 @@ cecjjj
 docker compose up -d $(seq -f "arx-node-%g" 1 50)
 ````
 
+docker-compose up -d arx-node-99
 
 
 
