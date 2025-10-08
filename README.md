@@ -83,7 +83,7 @@ docker-compose up -d
 ````
 ```bash
 docker compose up -d $(seq -f "arx-node-%g" 1 50)
-
+````
 
 
 
