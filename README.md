@@ -51,7 +51,7 @@ chmod +x *.sh
 #setup node
 thay số 20 thành số lượng ví muốn tạo
 ```bash
-./setup-nodes.sh 20
+./setup-nodes-new.sh 20
 ````
 ```bash
 ./generate-compose.sh 20
