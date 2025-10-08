@@ -81,6 +81,7 @@ docker-compose up -d
 ```bash
 ./view-logs.sh active
 ````
+cecjjj
 ```bash
 docker compose up -d $(seq -f "arx-node-%g" 1 50)
 ````
