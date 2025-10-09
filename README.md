@@ -85,7 +85,13 @@ cecjjj
 ```bash
 docker compose up -d $(seq -f "arx-node-%g" 1 50)
 ````
-
+chay file docker compose.yml mới
+```bash
+./generate-compose-v2.sh mxc 100 9080
+````
+```bash
+docker-compose -f docker-compose-mxc.yml up -d
+````
 docker-compose up -d arx-node-99
 
 
