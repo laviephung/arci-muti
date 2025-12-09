@@ -30,7 +30,7 @@ solana --version
 ````
 # Cài đặt Arcium CLI
 ```bash
-curl --proto '=https' --tlsv1.2 -sSfL https://arcium-install.arcium.workers.dev/ | bash
+curl --proto '=https' --tlsv1.2 -sSfL https://install.arcium.com/ | bash
 source "$HOME/.cargo/env"
 ````
 
